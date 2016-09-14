@@ -39,10 +39,10 @@
       <h2>Lista de redes privadas</h2>
       {%for redlan in redesLan%}
         <tr>
-            <td><p>{{redlan.ip_red}}</p></td>
-            <td><p>{{redlan.ip_host_inicial}}</p></td>
-            <td><p>{{redlan.ip_host_final}}</p></td>
-            <td><p>{{redlan.ip_mascara_de_red}}</p></td>
+            <td>{{redlan.ip_red}}</td>
+            <td>{{redlan.ip_host_inicial}}</td>
+            <td>{{redlan.ip_host_final}}</td>
+            <td>{{redlan.ip_mascara_de_red}}</td>
         </tr>
       {%empty%}
       </table>

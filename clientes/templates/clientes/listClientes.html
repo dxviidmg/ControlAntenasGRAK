@@ -1,6 +1,30 @@
 {%extends 'base.html'%}
-{%block title%}Datos de linea{%endblock title%}
-{%for cliente in clientes%}
-{}
+
+{%block title%}Lista de usuarios{%endblock title%}
+
 {%block content%}
+<table>
+	<thead>
+		<tr>
+			<th>Id</th>
+			<th>Nombre</th>
+			<th>Apellido Paterno</th>
+			<th>Apellido Materno</th>
+		</tr>
+	</thead>
+
+	{%for cliente in clientes%}
+	<tbody>
+		<tr>
+			<td>{{cliente.id}}</td>
+			<td>{{cliente.nombre}}</td>
+			<td>{{cliente.apellido_paterno}}</td>
+			<td>{{cliente.apellido_materno}}</td>
+		</tr>
+	</tbody>
+	{%empty%}
+		<h2>Lista vacia</h2>
+	{%endfor%}
+</table>
+
 {%endblock content%}

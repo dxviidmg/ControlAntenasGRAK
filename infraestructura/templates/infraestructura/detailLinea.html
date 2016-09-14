@@ -16,7 +16,7 @@
   </div>
   <div class="fdderecha">
     <h2>Información de Linea</h2>
-      <table style="width:100%">
+      <table>
         <tr>
             <th>Descripcion</th>
             <th>Distribuidor</th> 
@@ -33,7 +33,7 @@
           </tr>  
       </table>
        
-      <table style="width:100%">
+      <table>
         <tr>
             <th>Nombre</th>
             <th>Ubicacion</th> 
@@ -42,9 +42,9 @@
       <h2>Lista de celulas</h2>
       {%for celula in celulas%}
         <tr>
-            <td><p><a href="{{celula.get_absolute_url}}">{{celula.nombre}}</a></p></td>
-            <td><p>{{celula.ubicacion}}</p></td>
-            <td><p>{{celula.ancho_de_banda}} Megas</p></td>
+            <td><a href="{{celula.get_absolute_url}}">{{celula.nombre}}</a></td>
+            <td>{{celula.ubicacion}}</td>
+            <td>{{celula.ancho_de_banda}} Megas</td>
         </tr>
       {%empty%}
       </table>

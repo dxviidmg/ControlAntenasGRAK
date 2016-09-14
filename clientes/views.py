@@ -5,8 +5,8 @@ from .models import *
 class ListClientes(View):
 	def get(self, request,):
 		template_name = "clientes/listClientes.html"
-		clientes = Cliente.objects.all().order_by("apellido_mateṛno", "apellido_mateṛno", "nombre")
+		clientes = Cliente.objects.all()
 		context = {
-		'clientes': clientes
+		'clientes': clientes,
 		}
 		return render(request, template_name, context)
