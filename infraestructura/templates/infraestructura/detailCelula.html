@@ -1,0 +1,53 @@
+{%extends 'base.html'%}
+{%block title%}Datos de linea{%endblock title%}
+
+{%block content%}
+
+  <div class="fdizquierda" align="center">
+    <h3>Lista de Celulas</h3>
+    {%for cel in celulas%}
+    <p><a <a href="{{cel.get_absolute_url}}">{{cel.nombre}}</a></p>
+    {%empty%}
+    <p>No existen Celulas</p>
+    {%endfor%}
+    <p><a href="{%url 'infraestructura:listLineas'%}">Regresa</a></p>
+  </div>
+  <div class="fdderecha">
+    <h2>Información de Celula</h2>
+      <table style="width:100%">
+        <tr>
+            <th>Nombre</th>
+            <th>Ubicación</th> 
+            <th>Ancho de Banda total</th>
+            <th>Ancho de banda disponible</th>
+        </tr>
+          <tr>
+            <td>{{celula.nombre}}</td>
+            <td>{{celula.ubicacion}}</td>
+            <td>{{MegasTotal}} Megas</td>
+            <td>{{MegasDisponibles}} Megas</td>
+          </tr>
+      </table>
+       
+      <table style="width:100%">
+        <tr>
+            <th>IP de red</th>
+            <th>IP del primer host</th> 
+            <th>IP del ultimo host</th>
+            <th>IP de la mascara de red</th>
+          </tr>
+      <h2>Lista de redes privadas</h2>
+      {%for redlan in redesLan%}
+        <tr>
+            <td><p>{{redlan.ip_red}}</p></td>
+            <td><p>{{redlan.ip_host_inicial}}</p></td>
+            <td><p>{{redlan.ip_host_final}}</p></td>
+            <td><p>{{redlan.ip_mascara_de_red}}</p></td>
+        </tr>
+      {%empty%}
+      </table>
+      <h2>Vacio</h2>
+      {%endfor%}
+  </div>
+
+{%endblock content%}

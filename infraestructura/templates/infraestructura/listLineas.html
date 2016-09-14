@@ -1,0 +1,27 @@
+
+{%extends 'base.html'%}
+
+{%block title%}Lista de lineas{%endblock title%}
+
+{%block content%}
+ 	<h1>Lista de Lineas</h1>
+		<table style="width:100%">
+		<tr>
+			<th>Descripcion</th>
+			<th>Distribuidor</th>
+			<th>Ancho de Banda</th>
+		</tr>
+
+	{%for linea in lineas%}
+
+		<tr>
+			<td><p><a href="{{linea.get_absolute_url}}">{{linea.descripcion}}</a></p></td>
+			<td><p>{{linea.distribuidor}}</p></td>
+			<td>{{linea.ancho_de_banda}} Megas</td>
+		</tr>
+	{%empty%}
+		</table>
+		<h2>Vacio</h2>
+	{%endfor%}
+	
+{%endblock content%}
